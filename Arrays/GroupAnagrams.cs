@@ -18,3 +18,9 @@ public class Solution {
         return AnagramsDictionary.Values.ToList();
     }   
 }
+
+/*
+Solved using a Dictionary <key: alphabetically sorted string, value: list of anagrams>. The sorted string was 
+added as a key only once, if other strings (anagrams) of the key exist then they would be added as values.
+At the return, the values of the Dictionary are converted into a List and returned.
+*/
