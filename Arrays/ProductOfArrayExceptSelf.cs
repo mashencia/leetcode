@@ -36,3 +36,16 @@ public class Solution {
         return PreProduct;
     }
 }
+
+/*
+Solved via prefix and postfix products. Time complexity of O(n) was achieved via implementing 2 loops. First loop calculates 
+the prefix product, and the second calculates the postfix product and overall product except self. The logic for calculating
+the prefix product consists of a base case, element at the first index contains no prefex product, hence the pre. product is 1.
+For the next iterations, the prefix product equals theproduct of the previous element's prefix product and the value of that 
+element. Notice, the previous element was the "self" in the previous iteration. In terms of the postfix product, the logic is 
+almost the same, but in reverse. Implementation wise, instead of using an array like with the pre. product, a temporary variable
+will hold the current postfix product. This reduces the space complexity, since another array would increase it to linear space,
+but also simplifies the calculation for the actual product except self, with answer array being the PreProduct array. All of the
+calculations concerning the asnwer are done in the second loop as we are computing the postfix product.
+*/
+
