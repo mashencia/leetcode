@@ -8,7 +8,6 @@ Space Complexity: O(n)
 public class Solution {
     public int LengthOfLongestSubstring(string s) {
         int CurrentStart = 0;
-        int CurrentLength  = 0;
         int MaximumLength = 0;
 
         var Dupes = new Dictionary<char, int>();
@@ -32,3 +31,12 @@ public class Solution {
         return MaximumLength;
     }
 }
+
+/*
+Solved in linear time using a hashmap Dupes tracking when a character was last time seen in the string.
+Current start tracks the position at which the potential shortest substring can start. Once a duplicate 
+is encountered, the current start position moves to the postion one above the original position of the 
+duplicate element. The maximum length is calculated by determining the position between the current index 
+and the current start position. The maximum length is established if it is greater than the one previously
+recorded.
+*/
