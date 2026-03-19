@@ -3,7 +3,7 @@
 /*
 ~ Longest Substring Without Repeating Characters ~
 Time Complexity: O(n)
-Space Complexity: O(1)
+Space Complexity: O(n)
 */
 public class Solution {
     public int LengthOfLongestSubstring(string s) {
@@ -21,12 +21,11 @@ public class Solution {
             if(Dupes.ContainsKey(ch) && Dupes[ch]>=CurrentStart){
                 CurrentStart = Dupes[ch]+1;
                 Dupes[ch] = i;
-                CurrentLength = i - CurrentStart + 1;
                 continue;
             }else{
                 Dupes[ch] = i;
-                if(++CurrentLength>MaximumLength){
-                    MaximumLength = CurrentLength;
+                if(i - CurrentStart + 1>MaximumLength){
+                    MaximumLength = i - CurrentStart + 1;
                 }
             }
         }
